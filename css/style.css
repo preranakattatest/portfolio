@@ -1,0 +1,828 @@
+@import url('https://fonts.googleapis.com/css2?family=Road+Rage&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap');
+
+/* ==========================================================================
+   THEME VARIABLES & CSS RESET
+   Grunge Portfolio Design System (ThemeWagon Grunge Recreation)
+   ========================================================================== */
+
+:root {
+  --bg-primary: #141414;
+  --bg-secondary: #1a1a1a;
+  --bg-card: #1f1f1f;
+  --text-primary: #ffffff;
+  --text-muted: #a3a3a3;
+  --border-primary: #ffffff;
+  --border-muted: rgba(255, 255, 255, 0.2);
+  --font-grunge: 'Road Rage', cursive, sans-serif;
+  --font-mono: 'Space Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: var(--font-mono);
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  scroll-behavior: smooth;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+/* ==========================================================================
+   FILM GRAIN / NOISE OVERLAY
+   ========================================================================== */
+.noise-overlay {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.045;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+/* ==========================================================================
+   TYPOGRAPHY
+   ========================================================================== */
+.font-grunge {
+  font-family: var(--font-grunge);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  line-height: 0.9;
+}
+
+.font-mono {
+  font-family: var(--font-mono);
+}
+
+/* Fluid Heading Sizes */
+.text-giant {
+  font-size: clamp(4.5rem, 14vw, 12.5rem);
+  line-height: 0.85;
+}
+
+.text-section-title {
+  font-size: clamp(3rem, 8vw, 6rem);
+  line-height: 0.9;
+}
+
+.text-subheading {
+  font-size: clamp(1.75rem, 4vw, 3rem);
+  line-height: 1.1;
+}
+
+/* ==========================================================================
+   LAYOUT CONTAINERS & UTILITIES
+   ========================================================================== */
+.site-container {
+  max-width: 1380px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: clamp(1.25rem, 4vw, 3.5rem);
+  padding-right: clamp(1.25rem, 4vw, 3.5rem);
+}
+
+.section-spacing {
+  padding-top: clamp(4rem, 8vw, 8rem);
+  padding-bottom: clamp(4rem, 8vw, 8rem);
+}
+
+/* ==========================================================================
+   HEADER & NAVIGATION
+   ========================================================================== */
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  background-color: rgba(20, 20, 20, 0.85);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--border-muted);
+}
+
+.nav-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+
+.logo-stamp {
+  font-family: var(--font-grunge);
+  font-size: 2rem;
+  color: var(--text-primary);
+  text-decoration: none;
+  letter-spacing: 0.08em;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 2.5rem;
+  align-items: center;
+}
+
+.nav-link {
+  font-family: var(--font-grunge);
+  font-size: 1.6rem;
+  color: var(--text-primary);
+  text-decoration: none;
+  letter-spacing: 0.06em;
+  transition: color 0.2s ease, text-decoration-color 0.2s ease;
+  position: relative;
+}
+
+.nav-link:hover {
+  color: var(--text-muted);
+}
+
+.nav-link.active {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 8px;
+}
+
+/* Mobile Hamburger Toggle */
+.mobile-nav-toggle {
+  display: none;
+  background: none;
+  border: 2px solid var(--border-primary);
+  color: var(--text-primary);
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  padding: 0.5rem 0.85rem;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+/* Mobile Drawer */
+.mobile-drawer {
+  display: none;
+  position: fixed;
+  top: 75px;
+  left: 0;
+  right: 0;
+  background: #141414;
+  border-bottom: 2px solid var(--border-primary);
+  padding: 2rem 1.5rem;
+  z-index: 49;
+}
+
+.mobile-drawer.open {
+  display: block;
+}
+
+.mobile-drawer ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.mobile-drawer .nav-link {
+  font-size: 2.2rem;
+}
+
+/* ==========================================================================
+   BRUTALIST BADGES, BUTTONS & CARDS
+   ========================================================================== */
+.badge-pill {
+  display: inline-block;
+  background-color: var(--text-primary);
+  color: var(--bg-primary);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 0.35rem 0.75rem;
+  border-radius: 0;
+}
+
+.btn-brutalist {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-mono);
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--text-primary);
+  background-color: transparent;
+  border: 2px solid var(--border-primary);
+  padding: 0.9rem 2.2rem;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+}
+
+.btn-brutalist:hover {
+  background-color: var(--text-primary);
+  color: var(--bg-primary);
+}
+
+.btn-brutalist:active {
+  transform: translateY(2px);
+}
+
+/* Brutalist Borders */
+.border-brutalist {
+  border: 2px solid var(--border-primary);
+}
+
+.border-muted-divider {
+  border-top: 1px solid var(--border-muted);
+}
+
+/* ==========================================================================
+   HERO SECTION
+   ========================================================================== */
+.hero-statement {
+  font-family: var(--font-grunge);
+  font-size: clamp(1.8rem, 3.5vw, 2.75rem);
+  line-height: 1.05;
+  color: var(--text-primary);
+  max-width: 900px;
+  margin-bottom: 2rem;
+}
+
+.hero-meta-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+@media (min-width: 992px) {
+  .hero-grid {
+    grid-template-columns: 1.1fr 0.9fr;
+  }
+}
+
+/* Double-bordered photo frame */
+.photo-frame-outer {
+  position: relative;
+  padding: 1rem;
+  border: 2px solid var(--border-primary);
+  background-color: var(--bg-secondary);
+}
+
+.photo-frame-inner {
+  position: relative;
+  border: 2px solid var(--border-primary);
+  background-color: #000;
+  overflow: hidden;
+}
+
+.photo-frame-inner img,
+.photo-frame-inner svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  filter: grayscale(100%) contrast(110%);
+  transition: filter 0.3s ease;
+}
+
+.photo-frame-inner:hover img,
+.photo-frame-inner:hover svg {
+  filter: grayscale(85%) contrast(120%);
+}
+
+.photo-frame-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+/* ==========================================================================
+   VINYL RECORD SLEEVE PROJECT CARDS
+   ========================================================================== */
+.projects-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 4rem 2.5rem;
+}
+
+@media (min-width: 768px) {
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.vinyl-card {
+  position: relative;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.vinyl-sleeve-container {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  background-color: #0c0c0c;
+  margin-bottom: 1.5rem;
+}
+
+/* The Album Jacket / Cover */
+.vinyl-cover {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  border: 2px solid var(--border-primary);
+  background-color: #1a1a1a;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+}
+
+.vinyl-cover img,
+.vinyl-cover svg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.vinyl-cover-pill {
+  position: absolute;
+  top: 1.25rem;
+  left: 1.25rem;
+  z-index: 12;
+}
+
+/* The Vinyl Record Disc */
+.vinyl-disc {
+  position: absolute;
+  top: 50%;
+  right: 4%;
+  transform: translateY(-50%);
+  width: 90%;
+  height: 90%;
+  border-radius: 50%;
+  z-index: 5;
+  pointer-events: none;
+  background: radial-gradient(
+    circle,
+    #0a0a0a 0%,
+    #151515 28%,
+    #050505 30%,
+    #181818 42%,
+    #0c0c0c 44%,
+    #1f1f1f 58%,
+    #0a0a0a 60%,
+    #1a1a1a 75%,
+    #060606 77%,
+    #141414 96%,
+    #050505 100%
+  );
+  box-shadow: -5px 0 25px rgba(0, 0, 0, 0.9);
+  transition: transform 0.55s cubic-bezier(0.2, 0.8, 0.2, 1), right 0.55s cubic-bezier(0.2, 0.8, 0.2, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Disc Center Label */
+.vinyl-label {
+  width: 32%;
+  height: 32%;
+  border-radius: 50%;
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  border: 3px solid #111111;
+}
+
+.vinyl-label-hole {
+  width: 20%;
+  height: 20%;
+  border-radius: 50%;
+  background-color: var(--bg-primary);
+  border: 2px solid #333333;
+}
+
+/* Vinyl Hover Animation: Slide out & continuous spin */
+@keyframes vinyl-spin {
+  from {
+    transform: translateY(-50%) rotate(0deg);
+  }
+  to {
+    transform: translateY(-50%) rotate(360deg);
+  }
+}
+
+.vinyl-card:hover .vinyl-disc,
+.vinyl-card:focus .vinyl-disc {
+  right: -16%;
+  animation: vinyl-spin 4.5s linear infinite;
+}
+
+@media (max-width: 640px) {
+  .vinyl-card:hover .vinyl-disc {
+    right: -10%;
+  }
+}
+
+/* Project Card Typography */
+.project-card-title {
+  font-family: var(--font-grunge);
+  font-size: clamp(2rem, 3.5vw, 2.75rem);
+  color: var(--text-primary);
+  margin-bottom: 0.35rem;
+  transition: color 0.2s ease;
+}
+
+.vinyl-card:hover .project-card-title {
+  color: var(--text-muted);
+}
+
+.project-card-client {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+/* ==========================================================================
+   SERVICES & FAQ ACCORDIONS
+   ========================================================================== */
+.accordion-box {
+  border: 2px solid var(--border-primary);
+  background-color: var(--bg-secondary);
+}
+
+.accordion-item {
+  border-bottom: 1px solid var(--border-muted);
+}
+
+.accordion-item:last-child {
+  border-bottom: none;
+}
+
+.accordion-trigger {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.75rem 2rem;
+  background: none;
+  border: none;
+  color: var(--text-primary);
+  text-align: left;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.accordion-trigger:hover {
+  background-color: rgba(255, 255, 255, 0.03);
+}
+
+.accordion-title-wrap {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.accordion-index {
+  font-family: var(--font-mono);
+  font-size: 1rem;
+  color: var(--text-muted);
+}
+
+.accordion-title {
+  font-family: var(--font-grunge);
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
+  letter-spacing: 0.05em;
+}
+
+.accordion-icon {
+  width: 24px;
+  height: 24px;
+  stroke: var(--text-primary);
+  stroke-width: 2;
+  fill: none;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.accordion-item.active .accordion-icon {
+  transform: rotate(180deg);
+}
+
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  padding: 0 2rem;
+}
+
+.accordion-item.active .accordion-content {
+  max-height: 500px;
+  padding-bottom: 1.75rem;
+}
+
+.accordion-body {
+  font-family: var(--font-mono);
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.8;
+  max-width: 850px;
+}
+
+/* Accordion Footer Barcode Bar */
+.accordion-box-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #121212;
+  border-top: 2px solid var(--border-primary);
+}
+
+/* ==========================================================================
+   ABOUT PREVIEW & ABOUT PAGE STYLES
+   ========================================================================== */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3.5rem;
+  align-items: start;
+}
+
+@media (min-width: 992px) {
+  .about-grid {
+    grid-template-columns: 1.2fr 0.8fr;
+  }
+}
+
+.about-lead {
+  font-family: var(--font-grunge);
+  font-size: clamp(2rem, 3vw, 2.85rem);
+  line-height: 1.1;
+  margin-bottom: 2rem;
+  color: var(--text-primary);
+}
+
+.about-paragraphs p {
+  margin-bottom: 1.5rem;
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.8;
+}
+
+/* Experience / Education Meta Tags */
+.timeline-meta {
+  display: flex;
+  gap: 1rem;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.5rem;
+  flex-wrap: wrap;
+}
+
+/* ==========================================================================
+   PROJECT DETAIL PAGE STYLES
+   ========================================================================== */
+.project-detail-hero {
+  border: 2px solid var(--border-primary);
+  background-color: var(--bg-secondary);
+  padding: 1.5rem;
+  margin-bottom: 3.5rem;
+}
+
+.project-detail-image-box {
+  border: 2px solid var(--border-primary);
+  background-color: #000;
+  overflow: hidden;
+}
+
+.project-detail-image-box img,
+.project-detail-image-box svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.metadata-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  border-top: 2px solid var(--border-primary);
+  border-bottom: 2px solid var(--border-primary);
+  padding: 2rem 0;
+  margin: 3rem 0;
+}
+
+@media (min-width: 768px) {
+  .metadata-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.metadata-item h4 {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  letter-spacing: 0.12em;
+  margin-bottom: 0.5rem;
+}
+
+.metadata-item p {
+  font-family: var(--font-grunge);
+  font-size: 1.6rem;
+  color: var(--text-primary);
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  margin: 3.5rem 0;
+}
+
+@media (min-width: 768px) {
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ==========================================================================
+   CONTACT PAGE STYLES
+   ========================================================================== */
+.contact-cards-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+  margin-top: 3.5rem;
+}
+
+@media (min-width: 768px) {
+  .contact-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.contact-card {
+  border: 2px solid var(--border-primary);
+  background-color: var(--bg-secondary);
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-decoration: none;
+  color: var(--text-primary);
+  transition: transform 0.2s ease, background-color 0.2s ease;
+  min-height: 240px;
+}
+
+.contact-card:hover {
+  background-color: #242424;
+  transform: translateY(-4px);
+}
+
+.contact-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.contact-card-type {
+  font-family: var(--font-grunge);
+  font-size: 2.5rem;
+}
+
+.contact-card-value {
+  font-family: var(--font-mono);
+  font-size: clamp(1rem, 2vw, 1.4rem);
+  font-weight: 700;
+  word-break: break-all;
+}
+
+/* ==========================================================================
+   GLOBAL FOOTER
+   ========================================================================== */
+.site-footer {
+  border-top: 2px solid var(--border-primary);
+  background-color: #101010;
+  padding-top: 5rem;
+  padding-bottom: 3rem;
+  margin-top: 6rem;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  margin-bottom: 4rem;
+}
+
+@media (min-width: 768px) {
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.footer-col-title {
+  font-family: var(--font-grunge);
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  letter-spacing: 0.05em;
+}
+
+.footer-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.footer-link {
+  font-family: var(--font-mono);
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: color 0.2s ease, transform 0.2s ease;
+  display: inline-block;
+}
+
+.footer-link:hover {
+  color: var(--text-primary);
+  text-decoration: underline;
+  transform: translateX(4px);
+}
+
+.footer-bottom {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border-muted);
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+@media (min-width: 768px) {
+  .footer-bottom {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+.footer-bottom a {
+  color: var(--text-primary);
+  text-decoration: underline;
+}
+
+/* ==========================================================================
+   RESPONSIVE ADJUSTMENTS
+   ========================================================================== */
+@media (max-width: 850px) {
+  .nav-links {
+    display: none;
+  }
+  .mobile-nav-toggle {
+    display: block;
+  }
+}

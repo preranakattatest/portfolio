@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" width="100%" height="100%">
+  <rect width="600" height="600" fill="#1b1b1b"/>
+  
+  <!-- Stamp Seal Branding -->
+  <circle cx="300" cy="270" r="160" fill="none" stroke="#ffffff" stroke-width="4"/>
+  <circle cx="300" cy="270" r="145" fill="none" stroke="#ffffff" stroke-width="1" stroke-dasharray="6 6"/>
+  <circle cx="300" cy="270" r="120" fill="#242424"/>
+  
+  <!-- Star & Typography in seal -->
+  <text x="300" y="240" fill="#ffffff" font-family="'Courier New', monospace" font-size="28" font-weight="bold" text-anchor="middle" letter-spacing="4">ARTIFACT</text>
+  <text x="300" y="275" fill="#888888" font-family="'Courier New', monospace" font-size="12" text-anchor="middle" letter-spacing="3">ROASTERS // EST. 2021</text>
+  <text x="300" y="310" fill="#ffffff" font-family="'Courier New', monospace" font-size="16" text-anchor="middle">★ ★ ★ ★ ★</text>
+
+  <!-- Industrial Stamp Footer -->
+  <line x1="80" y1="460" x2="520" y2="460" stroke="#ffffff" stroke-width="2"/>
+  <text x="80" y="500" fill="#ffffff" font-family="'Courier New', monospace" font-size="20" font-weight="900" letter-spacing="4">COFFEE BRANDING // 05</text>
+  <text x="80" y="530" fill="#888888" font-family="'Courier New', monospace" font-size="12" letter-spacing="2">PACKAGING &amp; IDENTITY SYSTEM</text>
+</svg>

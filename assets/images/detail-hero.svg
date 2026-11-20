@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 650" width="100%" height="100%">
+  <defs>
+    <linearGradient id="dhGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1f1f1f"/>
+      <stop offset="50%" stop-color="#161616"/>
+      <stop offset="100%" stop-color="#0d0d0d"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="650" fill="url(#dhGrad)"/>
+
+  <!-- Technical Grid -->
+  <g stroke="#ffffff" stroke-width="1" opacity="0.12">
+    <line x1="0" y1="100" x2="1200" y2="100"/>
+    <line x1="0" y1="200" x2="1200" y2="200"/>
+    <line x1="0" y1="300" x2="1200" y2="300"/>
+    <line x1="0" y1="400" x2="1200" y2="400"/>
+    <line x1="0" y1="500" x2="1200" y2="500"/>
+    
+    <line x1="200" y1="0" x2="200" y2="650"/>
+    <line x1="400" y1="0" x2="400" y2="650"/>
+    <line x1="600" y1="0" x2="600" y2="650"/>
+    <line x1="800" y1="0" x2="800" y2="650"/>
+    <line x1="1000" y1="0" x2="1000" y2="650"/>
+  </g>
+
+  <!-- Large Device UI Mockup Showcase -->
+  <rect x="150" y="80" width="900" height="490" rx="8" fill="#181818" stroke="#ffffff" stroke-width="3"/>
+  
+  <!-- App Header -->
+  <rect x="150" y="80" width="900" height="50" fill="#242424" stroke="#ffffff" stroke-width="3"/>
+  <circle cx="180" cy="105" r="7" fill="#ffffff" opacity="0.6"/>
+  <circle cx="205" cy="105" r="7" fill="#ffffff" opacity="0.4"/>
+  <circle cx="230" cy="105" r="7" fill="#ffffff" opacity="0.2"/>
+  <rect x="420" y="93" width="360" height="24" rx="4" fill="#181818"/>
+  <text x="600" y="110" fill="#777777" font-family="'Courier New', monospace" font-size="11" text-anchor="middle">app.cloudsync.enterprise/analytics/dashboard</text>
+
+  <!-- Split Screen Content Mockup -->
+  <!-- Left Side: Navigation / Trees -->
+  <rect x="180" y="160" width="220" height="380" fill="#202020" stroke="#333333" stroke-width="1"/>
+  <rect x="205" y="185" width="120" height="18" fill="#ffffff" opacity="0.9"/>
+  <rect x="205" y="225" width="170" height="12" fill="#ffffff" opacity="0.2"/>
+  <rect x="205" y="250" width="140" height="12" fill="#ffffff" opacity="0.2"/>
+  <rect x="205" y="275" width="160" height="12" fill="#ffffff" opacity="0.2"/>
+  <rect x="205" y="300" width="130" height="12" fill="#ffffff" opacity="0.2"/>
+
+  <!-- Right Side: Big Data Visualization -->
+  <rect x="430" y="160" width="590" height="200" fill="#202020" stroke="#333333" stroke-width="1"/>
+  <text x="455" y="195" fill="#ffffff" font-family="'Courier New', monospace" font-size="14" font-weight="bold">REAL-TIME TRAFFIC &amp; CONCURRENT SESSIONS</text>
+  
+  <!-- Wave Graph -->
+  <path d="M 455 310 Q 520 230 600 270 T 750 220 T 890 280 T 990 200" fill="none" stroke="#ffffff" stroke-width="3"/>
+  <path d="M 455 310 Q 520 230 600 270 T 750 220 T 890 280 T 990 200 L 990 330 L 455 330 Z" fill="#ffffff" opacity="0.06"/>
+
+  <rect x="430" y="380" width="280" height="160" fill="#202020" stroke="#333333" stroke-width="1"/>
+  <rect x="740" y="380" width="280" height="160" fill="#202020" stroke="#333333" stroke-width="1"/>
+  
+  <text x="455" y="415" fill="#ffffff" font-family="'Courier New', monospace" font-size="13" font-weight="bold">SYSTEM LATENCY</text>
+  <text x="455" y="455" fill="#ffffff" font-family="'Courier New', monospace" font-size="32" font-weight="bold">14.2ms</text>
+  
+  <text x="765" y="415" fill="#ffffff" font-family="'Courier New', monospace" font-size="13" font-weight="bold">UPTIME SLA</text>
+  <text x="765" y="455" fill="#ffffff" font-family="'Courier New', monospace" font-size="32" font-weight="bold">99.98%</text>
+
+  <!-- Technical Marks -->
+  <text x="1150" y="610" fill="#ffffff" opacity="0.4" font-family="'Courier New', monospace" font-size="12" text-anchor="end">CASE STUDY // ASSET 01</text>
+</svg>

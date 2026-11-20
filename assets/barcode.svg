@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 48" fill="currentColor" class="barcode-graphic">
+  <rect x="0" y="0" width="3" height="40" fill="currentColor"/>
+  <rect x="5" y="0" width="2" height="40" fill="currentColor"/>
+  <rect x="9" y="0" width="5" height="40" fill="currentColor"/>
+  <rect x="16" y="0" width="1" height="40" fill="currentColor"/>
+  <rect x="19" y="0" width="4" height="40" fill="currentColor"/>
+  <rect x="25" y="0" width="2" height="40" fill="currentColor"/>
+  <rect x="29" y="0" width="6" height="40" fill="currentColor"/>
+  <rect x="37" y="0" width="2" height="40" fill="currentColor"/>
+  <rect x="41" y="0" width="3" height="40" fill="currentColor"/>
+  <rect x="46" y="0" width="1" height="40" fill="currentColor"/>
+  <rect x="49" y="0" width="5" height="40" fill="currentColor"/>
+  <rect x="56" y="0" width="2" height="40" fill="currentColor"/>
+  <rect x="60" y="0" width="4" height="40" fill="currentColor"/>
+  <rect x="66" y="0" width="1" height="40" fill="currentColor"/>
+  <rect x="69" y="0" width="7" height="40" fill="currentColor"/>
+  <rect x="78" y="0" width="2" height="40" fill="currentColor"/>
+  <rect x="82" y="0" width="3" height="40" fill="currentColor"/>
+  <rect x="87" y="0" width="5" height="40" fill="currentColor"/>
+  <rect x="94" y="0" width="1" height="40" fill="currentColor"/>
+  <rect x="97" y="0" width="4" height="40" fill="currentColor"/>
+  <rect x="103" y="0" width="2" height="40" fill="currentColor"/>
+  <rect x="107" y="0" width="6" height="40" fill="currentColor"/>
+  <rect x="115" y="0" width="2" height="40" fill="currentColor"/>
+  <rect x="119" y="0" width="4" height="40" fill="currentColor"/>
+  <rect x="125" y="0" width="1" height="40" fill="currentColor"/>
+  <rect x="128" y="0" width="5" height="40" fill="currentColor"/>
+  <rect x="135" y="0" width="2" height="40" fill="currentColor"/>
+  <rect x="139" y="0" width="4" height="40" fill="currentColor"/>
+  <rect x="145" y="0" width="1" height="40" fill="currentColor"/>
+  <rect x="148" y="0" width="5" height="40" fill="currentColor"/>
+  <rect x="155" y="0" width="3" height="40" fill="currentColor"/>
+  <text x="80" y="47" font-family="'Courier New', monospace" font-size="7" fill="currentColor" text-anchor="middle" letter-spacing="2">012.0123.456.78.900</text>
+</svg>

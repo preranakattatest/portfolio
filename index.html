@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home | Portfolio</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="assets/barcode.svg" type="image/svg+xml">
+</head>
+<body>
+  <!-- Grain / Film Noise Overlay -->
+  <div class="noise-overlay" aria-hidden="true"></div>
+
+  <!-- Site Navigation Header -->
+  <header class="site-header">
+    <div class="site-container nav-wrapper">
+      <a href="index.html" class="logo-stamp">
+        <!-- PLACEHOLDER: Brand/Monogram -->
+        <span>PJ // 2025</span>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav aria-label="Main Navigation">
+        <ul class="nav-links">
+          <li><a href="index.html" class="nav-link active">1. Home</a></li>
+          <li><a href="works.html" class="nav-link">2. Works</a></li>
+          <li><a href="about.html" class="nav-link">3. About</a></li>
+          <li><a href="contact.html" class="nav-link">4. Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Mobile Menu Toggle Button -->
+      <button class="mobile-nav-toggle" aria-expanded="false" aria-label="Toggle navigation">
+        MENU
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <div class="mobile-drawer" aria-hidden="true">
+    <ul>
+      <li><a href="index.html" class="nav-link active">1. Home</a></li>
+      <li><a href="works.html" class="nav-link">2. Works</a></li>
+      <li><a href="about.html" class="nav-link">3. About</a></li>
+      <li><a href="contact.html" class="nav-link">4. Contact</a></li>
+    </ul>
+  </div>
+
+  <main style="padding-top: 100px;">
+    <!-- ======================================================================
+         HERO SECTION
+         ====================================================================== -->
+    <section class="section-spacing">
+      <div class="site-container">
+        
+        <!-- Status Bar & Availability Badge -->
+        <div class="hero-meta-bar">
+          <a href="contact.html" class="badge-pill" style="text-decoration: none;">
+            <!-- PLACEHOLDER: Availability Status -->
+            AVAILABLE FOR WORK
+          </a>
+          <span style="font-size: 0.85rem; color: var(--text-muted); letter-spacing: 0.1em;">
+            <!-- PLACEHOLDER: Location / Timezone -->
+            BASED IN SAN FRANCISCO, CA • LOCAL TIME: PST
+          </span>
+        </div>
+
+        <!-- Giant Distressed Name -->
+        <!-- PLACEHOLDER: Replace "PETER JONES" with your name -->
+        <h1 class="font-grunge text-giant" style="margin-bottom: 2rem;">
+          PETER JONES
+        </h1>
+
+        <div class="hero-grid">
+          <!-- Left: Pitch / Statement & CTA -->
+          <div>
+            <!-- PLACEHOLDER: Hero Tagline / Value Proposition -->
+            <p class="hero-statement">
+              Hey there! I specialize in crafting unique, eye-catching designs that help small businesses like yours stand out in a crowded market.
+            </p>
+            
+            <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 2.5rem; max-width: 650px;">
+              <!-- PLACEHOLDER: Secondary intro / skills summary -->
+              Over 8+ years designing scalable design systems, digital products, and brand identities with a raw, memorable visual character.
+            </p>
+
+            <div style="display: flex; gap: 1.5rem; flex-wrap: wrap;">
+              <a href="works.html" class="btn-brutalist">EXPLORE WORKS</a>
+              <a href="contact.html" class="btn-brutalist" style="background-color: transparent;">GET IN TOUCH</a>
+            </div>
+          </div>
+
+          <!-- Right: Brutalist Framed Photo with Barcode -->
+          <div>
+            <div class="photo-frame-outer">
+              <div class="photo-frame-header">
+                <span class="badge-pill">CREATIVE LEAD</span>
+                <!-- Barcode Graphic -->
+                <img src="assets/barcode.svg" alt="Barcode element" style="height: 24px; width: auto;">
+              </div>
+
+              <div class="photo-frame-inner">
+                <!-- PLACEHOLDER: Portrait photo (replace with your photo e.g. assets/images/my-photo.jpg) -->
+                <img src="assets/images/hero-portrait.svg" alt="Portrait of Peter Jones" loading="lazy">
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         FEATURED WORKS SECTION (VINYL RECORD SLEEVE EFFECT)
+         ====================================================================== -->
+    <section class="section-spacing" style="border-top: 2px solid var(--border-primary);">
+      <div class="site-container">
+        
+        <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 3.5rem; flex-wrap: wrap; gap: 1.5rem;">
+          <div>
+            <span class="badge-pill" style="margin-bottom: 1rem;">SELECTED CASE STUDIES</span>
+            <h2 class="font-grunge text-section-title">FEATURED WORKS</h2>
+          </div>
+          <a href="works.html" class="btn-brutalist">VIEW ALL (06)</a>
+        </div>
+
+        <!-- 2-Column Vinyl Grid -->
+        <div class="projects-grid">
+          
+          <!-- PROJECT 01: Cloudsync Suite -->
+          <!-- PLACEHOLDER: Project 1 details -->
+          <article class="vinyl-card">
+            <a href="work-detail.html" style="text-decoration: none; color: inherit;">
+              <div class="vinyl-sleeve-container">
+                <div class="vinyl-cover">
+                  <span class="badge-pill vinyl-cover-pill">UI/UX DESIGN</span>
+                  <img src="assets/images/project-1.svg" alt="Cloudsync Suite Project Cover">
+                </div>
+                
+                <!-- Animated Vinyl Disc Sliding Out -->
+                <div class="vinyl-disc" aria-hidden="true">
+                  <div class="vinyl-label">
+                    <div class="vinyl-label-hole"></div>
+                  </div>
+                </div>
+              </div>
+
+              <h3 class="project-card-title">CLOUDSYNC SUITE</h3>
+              <p class="project-card-client">CLIENT: CLOUDSYNC TECHNOLOGIES • 2025</p>
+            </a>
+          </article>
+
+          <!-- PROJECT 02: Lumina E-commerce -->
+          <!-- PLACEHOLDER: Project 2 details -->
+          <article class="vinyl-card">
+            <a href="work-detail.html" style="text-decoration: none; color: inherit;">
+              <div class="vinyl-sleeve-container">
+                <div class="vinyl-cover">
+                  <span class="badge-pill vinyl-cover-pill">WEB DESIGN</span>
+                  <img src="assets/images/project-2.svg" alt="Lumina E-commerce Project Cover">
+                </div>
+                
+                <div class="vinyl-disc" aria-hidden="true">
+                  <div class="vinyl-label">
+                    <div class="vinyl-label-hole"></div>
+                  </div>
+                </div>
+              </div>
+
+              <h3 class="project-card-title">LUMINA E-COMMERCE</h3>
+              <p class="project-card-client">CLIENT: LUMINA LUXURY • 2024</p>
+            </a>
+          </article>
+
+          <!-- PROJECT 03: Nourish Restaurant -->
+          <!-- PLACEHOLDER: Project 3 details -->
+          <article class="vinyl-card">
+            <a href="work-detail.html" style="text-decoration: none; color: inherit;">
+              <div class="vinyl-sleeve-container">
+                <div class="vinyl-cover">
+                  <span class="badge-pill vinyl-cover-pill">ART DIRECTION</span>
+                  <img src="assets/images/project-3.svg" alt="Nourish Restaurant Project Cover">
+                </div>
+                
+                <div class="vinyl-disc" aria-hidden="true">
+                  <div class="vinyl-label">
+                    <div class="vinyl-label-hole"></div>
+                  </div>
+                </div>
+              </div>
+
+              <h3 class="project-card-title">NOURISH RESTAURANT</h3>
+              <p class="project-card-client">CLIENT: NOURISH HOSPITALITY GROUP • 2024</p>
+            </a>
+          </article>
+
+          <!-- PROJECT 04: Harmony Smart Speaker -->
+          <!-- PLACEHOLDER: Project 4 details -->
+          <article class="vinyl-card">
+            <a href="work-detail.html" style="text-decoration: none; color: inherit;">
+              <div class="vinyl-sleeve-container">
+                <div class="vinyl-cover">
+                  <span class="badge-pill vinyl-cover-pill">PRODUCT DESIGN</span>
+                  <img src="assets/images/project-4.svg" alt="Harmony Smart Speaker Project Cover">
+                </div>
+                
+                <div class="vinyl-disc" aria-hidden="true">
+                  <div class="vinyl-label">
+                    <div class="vinyl-label-hole"></div>
+                  </div>
+                </div>
+              </div>
+
+              <h3 class="project-card-title">HARMONY SMART SPEAKER</h3>
+              <p class="project-card-client">CLIENT: HARMONY AUDIO LABS • 2023</p>
+            </a>
+          </article>
+
+        </div>
+
+        <div style="text-align: center; margin-top: 5rem;">
+          <a href="works.html" class="btn-brutalist">ALL WORKS</a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         SERVICES ACCORDION SECTION
+         ====================================================================== -->
+    <section class="section-spacing" style="border-top: 2px solid var(--border-primary);">
+      <div class="site-container">
+        
+        <div style="margin-bottom: 3.5rem;">
+          <span class="badge-pill" style="margin-bottom: 1rem;">WHAT I DO</span>
+          <h2 class="font-grunge text-section-title">SERVICES</h2>
+        </div>
+
+        <!-- Services Accordion Box -->
+        <div class="accordion-box">
+          
+          <!-- Service 1 -->
+          <!-- PLACEHOLDER: Service 1 -->
+          <div class="accordion-item active">
+            <button class="accordion-trigger" type="button" aria-expanded="true">
+              <div class="accordion-title-wrap">
+                <span class="accordion-index">01.</span>
+                <span class="accordion-title">WEB DESIGN</span>
+              </div>
+              <svg class="accordion-icon" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="accordion-content">
+              <p class="accordion-body">
+                Custom, responsive websites crafted with uncompromising attention to typography, performance, and conversion. Built for speed, search optimization, and unforgettable first impressions.
+              </p>
+            </div>
+          </div>
+
+          <!-- Service 2 -->
+          <!-- PLACEHOLDER: Service 2 -->
+          <div class="accordion-item">
+            <button class="accordion-trigger" type="button" aria-expanded="false">
+              <div class="accordion-title-wrap">
+                <span class="accordion-index">02.</span>
+                <span class="accordion-title">PRODUCT DESIGN</span>
+              </div>
+              <svg class="accordion-icon" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="accordion-content">
+              <p class="accordion-body">
+                End-to-end digital product design from discovery and user research to interactive Figma prototyping, usability testing, and frictionless developer handoff.
+              </p>
+            </div>
+          </div>
+
+          <!-- Service 3 -->
+          <!-- PLACEHOLDER: Service 3 -->
+          <div class="accordion-item">
+            <button class="accordion-trigger" type="button" aria-expanded="false">
+              <div class="accordion-title-wrap">
+                <span class="accordion-index">03.</span>
+                <span class="accordion-title">BRANDING &amp; IDENTITY</span>
+              </div>
+              <svg class="accordion-icon" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="accordion-content">
+              <p class="accordion-body">
+                Distinctive brand systems including visual marks, custom typography treatments, editorial guidelines, and packaging collateral built to stand out in saturated markets.
+              </p>
+            </div>
+          </div>
+
+          <!-- Service 4 -->
+          <!-- PLACEHOLDER: Service 4 -->
+          <div class="accordion-item">
+            <button class="accordion-trigger" type="button" aria-expanded="false">
+              <div class="accordion-title-wrap">
+                <span class="accordion-index">04.</span>
+                <span class="accordion-title">UI/UX DESIGN &amp; SYSTEMS</span>
+              </div>
+              <svg class="accordion-icon" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="accordion-content">
+              <p class="accordion-body">
+                Robust, accessible component libraries and design tokens that accelerate product development velocity while maintaining ironclad visual consistency.
+              </p>
+            </div>
+          </div>
+
+          <!-- Decorative Accordion Footer Bar -->
+          <div class="accordion-box-footer">
+            <span style="font-size: 0.8rem; color: var(--text-muted); letter-spacing: 0.1em;">
+              CAPABILITIES SPEC // 2025
+            </span>
+            <img src="assets/barcode.svg" alt="Barcode graphic" style="height: 20px; width: auto;">
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         ABOUT PREVIEW SECTION
+         ====================================================================== -->
+    <section class="section-spacing" style="border-top: 2px solid var(--border-primary);">
+      <div class="site-container">
+        
+        <div style="margin-bottom: 3.5rem;">
+          <span class="badge-pill" style="margin-bottom: 1rem;">BACKGROUND</span>
+          <h2 class="font-grunge text-section-title">ABOUT</h2>
+        </div>
+
+        <div class="about-grid">
+          <div>
+            <!-- PLACEHOLDER: About Headline -->
+            <h3 class="about-lead">
+              I'm a creative problem-solver who thrives at the intersection of design, strategy, and human behavior.
+            </h3>
+            
+            <div class="about-paragraphs">
+              <!-- PLACEHOLDER: Bio Paragraphs -->
+              <p>
+                With over eight years in the creative trenches, I've partnered with venture-backed tech startups, indie record labels, and heritage retail brands to build digital identities that leave a mark.
+              </p>
+              <p>
+                My process strips away corporate bloat in favor of intentional craft, raw textures, and bold brutalist aesthetics that spark curiosity and command attention.
+              </p>
+            </div>
+
+            <div style="margin-top: 2.5rem;">
+              <a href="about.html" class="btn-brutalist">MORE ABOUT ME</a>
+            </div>
+          </div>
+
+          <!-- Secondary Portrait Frame -->
+          <div>
+            <div class="photo-frame-outer">
+              <div class="photo-frame-header">
+                <span class="badge-pill">STUDIO ARCHIVE</span>
+                <img src="assets/barcode.svg" alt="Barcode graphic" style="height: 22px; width: auto;">
+              </div>
+              <div class="photo-frame-inner">
+                <!-- PLACEHOLDER: Secondary photo or studio image -->
+                <img src="assets/images/hero-portrait.svg" alt="Peter Jones in studio">
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         FAQ SECTION
+         ====================================================================== -->
+    <section class="section-spacing" style="border-top: 2px solid var(--border-primary);">
+      <div class="site-container">
+        
+        <div style="margin-bottom: 3.5rem;">
+          <span class="badge-pill" style="margin-bottom: 1rem;">CLARIFICATIONS</span>
+          <h2 class="font-grunge text-section-title">FAQ</h2>
+        </div>
+
+        <div class="accordion-box">
+          
+          <!-- FAQ 1 -->
+          <!-- PLACEHOLDER: FAQ 1 -->
+          <div class="accordion-item active">
+            <button class="accordion-trigger" type="button" aria-expanded="true">
+              <div class="accordion-title-wrap">
+                <span class="accordion-index">01.</span>
+                <span class="accordion-title">WHAT'S YOUR TYPICAL PROJECT TIMELINE?</span>
+              </div>
+              <svg class="accordion-icon" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="accordion-content">
+              <p class="accordion-body">
+                Most web design and branding projects run between 3 to 6 weeks depending on project scope, deliverables, and revision cadence. Accelerated sprint engagements are also available upon request.
+              </p>
+            </div>
+          </div>
+
+          <!-- FAQ 2 -->
+          <!-- PLACEHOLDER: FAQ 2 -->
+          <div class="accordion-item">
+            <button class="accordion-trigger" type="button" aria-expanded="false">
+              <div class="accordion-title-wrap">
+                <span class="accordion-index">02.</span>
+                <span class="accordion-title">HOW DO YOU STRUCTURE YOUR PRICING?</span>
+              </div>
+              <svg class="accordion-icon" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="accordion-content">
+              <p class="accordion-body">
+                I primarily work on transparent, fixed-scope project agreements with milestones. For ongoing embedded advisory or fractional design leadership, monthly retainer agreements are available.
+              </p>
+            </div>
+          </div>
+
+          <!-- FAQ 3 -->
+          <!-- PLACEHOLDER: FAQ 3 -->
+          <div class="accordion-item">
+            <button class="accordion-trigger" type="button" aria-expanded="false">
+              <div class="accordion-title-wrap">
+                <span class="accordion-index">03.</span>
+                <span class="accordion-title">WHAT'S INCLUDED IN YOUR DESIGN PROCESS?</span>
+              </div>
+              <svg class="accordion-icon" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="accordion-content">
+              <p class="accordion-body">
+                Every project begins with discovery and positioning research, followed by moodboards, wireframes, high-fidelity responsive mockups, design token documentation, and interactive prototypes.
+              </p>
+            </div>
+          </div>
+
+          <!-- FAQ 4 -->
+          <!-- PLACEHOLDER: FAQ 4 -->
+          <div class="accordion-item">
+            <button class="accordion-trigger" type="button" aria-expanded="false">
+              <div class="accordion-title-wrap">
+                <span class="accordion-index">04.</span>
+                <span class="accordion-title">DO YOU WORK WITH CLIENTS REMOTELY?</span>
+              </div>
+              <svg class="accordion-icon" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="accordion-content">
+              <p class="accordion-body">
+                Yes, absolutely. Over 90% of my clients are located worldwide. Communication happens via Slack, asynchronous Loom demos, and weekly alignment calls.
+              </p>
+            </div>
+          </div>
+
+          <!-- FAQ 5 -->
+          <!-- PLACEHOLDER: FAQ 5 -->
+          <div class="accordion-item">
+            <button class="accordion-trigger" type="button" aria-expanded="false">
+              <div class="accordion-title-wrap">
+                <span class="accordion-index">05.</span>
+                <span class="accordion-title">HOW MANY REVISIONS ARE INCLUDED?</span>
+              </div>
+              <svg class="accordion-icon" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="accordion-content">
+              <p class="accordion-body">
+                All fixed-scope proposals include 2 comprehensive rounds of revisions at each project phase (wireframing, visual concept, final delivery) to ensure complete alignment.
+              </p>
+            </div>
+          </div>
+
+          <!-- Decorative Footer Bar -->
+          <div class="accordion-box-footer">
+            <span style="font-size: 0.8rem; color: var(--text-muted); letter-spacing: 0.1em;">
+              TERMS &amp; PRACTICES // 2025
+            </span>
+            <img src="assets/barcode.svg" alt="Barcode graphic" style="height: 20px; width: auto;">
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ======================================================================
+       GLOBAL FOOTER
+       ====================================================================== -->
+  <footer class="site-footer">
+    <div class="site-container">
+      
+      <div class="footer-grid">
+        <!-- Socials Column -->
+        <div>
+          <h3 class="footer-col-title">SOCIALS</h3>
+          <ul class="footer-links">
+            <!-- PLACEHOLDER: Social Links -->
+            <li><a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="footer-link">LINKEDIN // PROFILE</a></li>
+            <li><a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="footer-link">INSTAGRAM // VISUALS</a></li>
+            <li><a href="https://x.com" target="_blank" rel="noopener noreferrer" class="footer-link">TWITTER // THOUGHTS</a></li>
+            <li><a href="https://github.com" target="_blank" rel="noopener noreferrer" class="footer-link">GITHUB // CODE</a></li>
+          </ul>
+        </div>
+
+        <!-- Navigation Column -->
+        <div>
+          <h3 class="footer-col-title">NAVIGATION</h3>
+          <ul class="footer-links">
+            <li><a href="index.html" class="footer-link">1. HOME</a></li>
+            <li><a href="works.html" class="footer-link">2. WORKS</a></li>
+            <li><a href="about.html" class="footer-link">3. ABOUT</a></li>
+            <li><a href="contact.html" class="footer-link">4. CONTACT</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Copyright & Credits -->
+      <div class="footer-bottom">
+        <div>
+          <!-- PLACEHOLDER: Copyright Name -->
+          PETER JONES © 2025 ALL RIGHTS RESERVED
+        </div>
+        <div>
+          BUILT WITH GRUNGE AESTHETIC • INSPIRED BY <a href="https://themewagon.com/themes/grunge/" target="_blank" rel="noopener noreferrer">THEMEWAGON GRUNGE</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

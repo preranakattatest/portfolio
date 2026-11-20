@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 450" width="100%" height="100%">
+  <rect width="700" height="450" fill="#181818"/>
+  <rect x="30" y="30" width="640" height="390" fill="#222222" stroke="#ffffff" stroke-width="2"/>
+  
+  <text x="60" y="75" fill="#ffffff" font-family="'Courier New', monospace" font-size="14" font-weight="bold" letter-spacing="3">DESIGN SYSTEM // COMPONENT TOKENS</text>
+  
+  <!-- Component Cards -->
+  <g fill="#1a1a1a" stroke="#444444" stroke-width="1">
+    <rect x="60" y="110" width="160" height="120"/>
+    <rect x="250" y="110" width="160" height="120"/>
+    <rect x="440" y="110" width="160" height="120"/>
+    <rect x="60" y="260" width="260" height="120"/>
+    <rect x="340" y="260" width="260" height="120"/>
+  </g>
+  
+  <!-- Buttons inside tokens -->
+  <rect x="80" y="140" width="120" height="30" fill="#ffffff"/>
+  <text x="140" y="160" fill="#000000" font-family="'Courier New', monospace" font-size="10" font-weight="bold" text-anchor="middle">PRIMARY BTN</text>
+  
+  <rect x="270" y="140" width="120" height="30" fill="none" stroke="#ffffff" stroke-width="2"/>
+  <text x="330" y="160" fill="#ffffff" font-family="'Courier New', monospace" font-size="10" font-weight="bold" text-anchor="middle">GHOST BTN</text>
+
+  <rect x="460" y="140" width="120" height="30" fill="#333333"/>
+  <text x="520" y="160" fill="#888888" font-family="'Courier New', monospace" font-size="10" font-weight="bold" text-anchor="middle">DISABLED</text>
+</svg>
