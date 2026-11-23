@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgSheet" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#17261d"/>
+      <stop offset="100%" stop-color="#0e1711"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="600" fill="url(#bgSheet)"/>
+
+  <!-- Fold Pattern Orthogonal Guides -->
+  <g stroke="#e0eae2" stroke-width="1" opacity="0.15">
+    <rect x="70" y="70" width="460" height="400" fill="none" stroke-dasharray="4 4"/>
+    <line x1="160" y1="70" x2="160" y2="470" stroke-dasharray="4 4"/>
+    <line x1="440" y1="70" x2="440" y2="470" stroke-dasharray="4 4"/>
+  </g>
+
+  <!-- Sheet Metal U-Cover and Flat Fold Pattern Isometric -->
+  <g transform="translate(100, 100)">
+    <!-- Folded Metal Chassis Isometric Representation -->
+    <g transform="translate(40, 20)">
+      <!-- Top Cover Shell -->
+      <polygon points="40,60 260,20 320,60 100,100" fill="#25382b" stroke="#e0eae2" stroke-width="2.5"/>
+      <polygon points="40,60 100,100 100,180 40,140" fill="#1b2a20" stroke="#e0eae2" stroke-width="2.5"/>
+      <polygon points="100,100 320,60 320,140 100,180" fill="#142118" stroke="#e0eae2" stroke-width="2.5"/>
+
+      <!-- Ventilation Slots on Side Face -->
+      <g stroke="#e0eae2" stroke-width="2" opacity="0.8">
+        <line x1="130" y1="120" x2="170" y2="112"/>
+        <line x1="130" y1="135" x2="170" y2="127"/>
+        <line x1="130" y1="150" x2="170" y2="142"/>
+        
+        <line x1="200" y1="106" x2="240" y2="98"/>
+        <line x1="200" y1="121" x2="240" y2="113"/>
+        <line x1="200" y1="136" x2="240" y2="128"/>
+      </g>
+    </g>
+
+    <!-- 3D Printed Flat-Fold Pattern Concept -->
+    <g transform="translate(30, 210)" stroke="#e0eae2" stroke-width="1.8" fill="#19271e">
+      <rect x="0" y="20" width="340" height="70" rx="2"/>
+      <!-- Bend line indicators (thinned lines) -->
+      <line x1="70" y1="20" x2="70" y2="90" stroke="#7da585" stroke-dasharray="3 3"/>
+      <line x1="270" y1="20" x2="270" y2="90" stroke="#7da585" stroke-dasharray="3 3"/>
+      <!-- Fold arrows -->
+      <path d="M 60 45 Q 67 30 78 40" fill="none" stroke="#e0eae2"/>
+      <path d="M 280 45 Q 273 30 262 40" fill="none" stroke="#e0eae2"/>
+    </g>
+
+    <text x="200" y="325" fill="#7da585" font-family="'Space Mono', monospace" font-size="10" text-anchor="middle" letter-spacing="1">SIMULATING SHEET METAL BENDING ON 3D PRINTER</text>
+  </g>
+
+  <!-- Technical Spec Labels -->
+  <rect x="50" y="50" width="220" height="24" fill="#e0eae2"/>
+  <text x="160" y="66" fill="#121d15" font-family="'Space Mono', monospace" font-size="10" font-weight="bold" text-anchor="middle" letter-spacing="1">RAPID FOLD PROTOTYPING</text>
+
+  <text x="50" y="530" fill="#e0eae2" font-family="'Space Mono', monospace" font-size="18" font-weight="900" letter-spacing="2">SHEET METAL ENCLOSURE</text>
+  <text x="50" y="555" fill="#9eb5a3" font-family="'Space Mono', monospace" font-size="11" letter-spacing="1">FUSION 360 SHEET METAL • FOLDABLE 3D PRINT</text>
+</svg>
