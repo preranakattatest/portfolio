@@ -8,7 +8,59 @@ document.addEventListener('DOMContentLoaded', () => {
   initMobileNav();
   highlightActiveNav();
   initVinylCards();
+  initLightbox();
 });
+
+/**
+ * Fullscreen Lightbox for Case Study Images
+ */
+function initLightbox() {
+  let modal = document.querySelector('.lightbox-modal');
+  if (!modal) {
+    modal = document.createElement('div');
+    modal.className = 'lightbox-modal';
+    modal.innerHTML = `
+      <button class="lightbox-close" aria-label="Close image">CLOSE [ESC]</button>
+      <img class="lightbox-content" src="" alt="Enlarged view">
+    `;
+    document.body.appendChild(modal);
+  }
+
+  const modalImg = modal.querySelector('.lightbox-content');
+  const closeBtn = modal.querySelector('.lightbox-close');
+
+  function openLightbox(src, alt) {
+    modalImg.src = src;
+    modalImg.alt = alt || 'Enlarged project view';
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLightbox() {
+    modal.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+
+  // Click on any clickable image or detail image
+  document.addEventListener('click', (e) => {
+    const target = e.target.closest('.clickable-image, .project-detail-image-box img, .photo-frame-inner img');
+    if (target && target.src) {
+      e.preventDefault();
+      openLightbox(target.src, target.alt);
+    }
+  });
+
+  closeBtn.addEventListener('click', closeLightbox);
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) closeLightbox();
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modal.classList.contains('active')) {
+      closeLightbox();
+    }
+  });
+}
 
 /**
  * Accordion Functionality (Services, FAQ, Experience, Education)

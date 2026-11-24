@@ -2,6 +2,17 @@ $port = 8000
 $root = $PSScriptRoot
 if (-not $root) { $root = Get-Location }
 
+# If Python is available, use python -m http.server which is battle-tested
+$pythonExe = "C:\Program Files\Blender Foundation\Blender 5.1\5.1\python\bin\python.exe"
+if (Test-Path $pythonExe) {
+    Set-Location $root
+    Write-Host "Portfolio local server starting via Python at http://localhost:$port/"
+    Write-Host "Press Ctrl+C to stop."
+    & $pythonExe -m http.server $port --directory $root
+    exit
+}
+
+# Fallback HttpListener
 $listener = New-Object System.Net.HttpListener
 $listener.Prefixes.Add("http://localhost:$port/")
 $listener.Prefixes.Add("http://127.0.0.1:$port/")
@@ -28,37 +39,44 @@ try {
     }
 
     while ($listener.IsListening) {
-        $context = $listener.GetContext()
-        $request = $context.Request
-        $response = $context.Response
+        try {
+            $context = $listener.GetContext()
+            $request = $context.Request
+            $response = $context.Response
 
-        $path = $request.Url.LocalPath.TrimStart('/')
-        if ([string]::IsNullOrEmpty($path)) { $path = "index.html" }
-        
-        $filePath = Join-Path $root $path
+            $path = $request.Url.LocalPath.TrimStart('/')
+            if ([string]::IsNullOrEmpty($path)) { $path = "index.html" }
+            
+            $filePath = Join-Path $root $path
+            $fullPath = [System.IO.Path]::GetFullPath($filePath)
+            $rootFullPath = [System.IO.Path]::GetFullPath($root)
 
-        # Security check: prevent directory traversal
-        $fullPath = [System.IO.Path]::GetFullPath($filePath)
-        $rootFullPath = [System.IO.Path]::GetFullPath($root)
+            if ($fullPath.StartsWith($rootFullPath) -and (Test-Path $fullPath -PathType Leaf)) {
+                $ext = [System.IO.Path]::GetExtension($fullPath).ToLower()
+                $mime = $mimeTypes[$ext]
+                if (-not $mime) { $mime = "application/octet-stream" }
 
-        if ($fullPath.StartsWith($rootFullPath) -and (Test-Path $fullPath -PathType Leaf)) {
-            $ext = [System.IO.Path]::GetExtension($fullPath).ToLower()
-            $mime = $mimeTypes[$ext]
-            if (-not $mime) { $mime = "application/octet-stream" }
+                $bytes = [System.IO.File]::ReadAllBytes($fullPath)
+                $response.ContentType = $mime
+                $response.ContentLength64 = $bytes.Length
+                $response.StatusCode = 200
 
-            $bytes = [System.IO.File]::ReadAllBytes($fullPath)
-            $response.ContentType = $mime
-            $response.ContentLength64 = $bytes.Length
-            $response.StatusCode = 200
-            $response.OutputStream.Write($bytes, 0, $bytes.Length)
-        } else {
-            $response.StatusCode = 404
-            $msg = [System.Text.Encoding]::UTF8.GetBytes("404 Not Found")
-            $response.ContentType = "text/plain"
-            $response.ContentLength64 = $msg.Length
-            $response.OutputStream.Write($msg, 0, $msg.Length)
+                if ($request.HttpMethod -ne "HEAD") {
+                    $response.OutputStream.Write($bytes, 0, $bytes.Length)
+                }
+            } else {
+                $response.StatusCode = 404
+                $msg = [System.Text.Encoding]::UTF8.GetBytes("404 Not Found")
+                $response.ContentType = "text/plain"
+                $response.ContentLength64 = $msg.Length
+                if ($request.HttpMethod -ne "HEAD") {
+                    $response.OutputStream.Write($msg, 0, $msg.Length)
+                }
+            }
+            $response.Close()
+        } catch {
+            # Continue listening even if a client disconnects unexpectedly
         }
-        $response.Close()
     }
 } finally {
     $listener.Stop()
